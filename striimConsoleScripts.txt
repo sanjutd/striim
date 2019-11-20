@@ -1,0 +1,17 @@
+./console.sh -c ISSWORLD_PROD
+./console.sh -c ISSWORLD_DEV
+
+DEPLOY APPLICATION admin.INSIGHT2_5_DSBMADS_DK;
+drop application admin.INSIGHT2_5_DSBMADS_DK CASCADE;
+
+CREATE USER <uname> {IDENTIFIED BY Cognizant12} [DEFAULT ROLE INSIGHT2_5.admin];
+
+
+mon OracleReader_INSIGHT2_5_exaprod_dataload_SRC
+mon DatabaseWriterTarget_<NAME>_DNVGL_NO
+
+SHOW INSIGHT2_5.OracleReader_<NAME>ables_SRC OPENTRANSACTIONS -dump '/home/xsanjud/opentran_1.txt';
+
+SHOW admin.OracleReader_<NAME>xaunipa_dataload_SRC -dump '/home/xsanjud/opentran_1.txt';
+
+/opt/Striim/bin/console.sh -c 
